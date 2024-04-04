@@ -1,0 +1,29 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "DisableNew",
+  "sourceName": "contracts/standart_token/mocks/InitializableMock.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "version",
+          "type": "uint8"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b506016601a565b60d7565b600054610100900460ff161560855760405162461bcd60e51b815260206004820152602760248201527f496e697469616c697a61626c653a20636f6e747261637420697320696e697469604482015266616c697a696e6760c81b606482015260840160405180910390fd5b60005460ff9081161460d5576000805460ff191660ff9081179091556040519081527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a15b565b603f806100e56000396000f3fe6080604052600080fdfea2646970667358221220558f59f1e8a4d27cdf128a6fd7cef7b0c80e73ac7c0da44cdc9fdc0be7560a1b64736f6c63430008180033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220558f59f1e8a4d27cdf128a6fd7cef7b0c80e73ac7c0da44cdc9fdc0be7560a1b64736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

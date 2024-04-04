@@ -1,0 +1,37 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ClashingImplementation",
+  "sourceName": "contracts/standart_token/mocks/proxy/ClashingImplementation.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "delegatedFunction",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060928061001e6000396000f3fe60806040526004361060265760003560e01c8063abf8e0e714602b578063f851a44014604b575b600080fd5b348015603657600080fd5b50604051600181526020015b60405180910390f35b60405163111111428152602001604256fea2646970667358221220296967230d161ee4070fc022764300a224a27cf2d0ad17ae03c2355181e9137d64736f6c63430008180033",
+  "deployedBytecode": "0x60806040526004361060265760003560e01c8063abf8e0e714602b578063f851a44014604b575b600080fd5b348015603657600080fd5b50604051600181526020015b60405180910390f35b60405163111111428152602001604256fea2646970667358221220296967230d161ee4070fc022764300a224a27cf2d0ad17ae03c2355181e9137d64736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

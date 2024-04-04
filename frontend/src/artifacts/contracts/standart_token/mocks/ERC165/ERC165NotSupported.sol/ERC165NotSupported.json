@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ERC165NotSupported",
+  "sourceName": "contracts/standart_token/mocks/ERC165/ERC165NotSupported.sol",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220035a843b4ef968258ee7a72723460372f8bc3fe6057a31b067004c0154011a6b64736f6c63430008180033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220035a843b4ef968258ee7a72723460372f8bc3fe6057a31b067004c0154011a6b64736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

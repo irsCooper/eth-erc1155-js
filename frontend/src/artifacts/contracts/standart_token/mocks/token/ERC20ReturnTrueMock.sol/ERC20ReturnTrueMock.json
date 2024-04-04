@@ -1,0 +1,130 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ERC20ReturnTrueMock",
+  "sourceName": "contracts/standart_token/mocks/token/ERC20ReturnTrueMock.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "allowance_",
+          "type": "uint256"
+        }
+      ],
+      "name": "setAllowance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506101ed806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c8063095ea7b31461005c57806323b872dd14610087578063310ec4a71461009e578063a9059cbb1461005c578063dd62ed3e146100ca575b600080fd5b61007261006a36600461011e565b600192915050565b60405190151581526020015b60405180910390f35b610072610095366004610148565b60019392505050565b6100c86100ac36600461011e565b6001600160a01b03909116600090815260208190526040902055565b005b6100f46100d8366004610184565b506001600160a01b031660009081526020819052604090205490565b60405190815260200161007e565b80356001600160a01b038116811461011957600080fd5b919050565b6000806040838503121561013157600080fd5b61013a83610102565b946020939093013593505050565b60008060006060848603121561015d57600080fd5b61016684610102565b925061017460208501610102565b9150604084013590509250925092565b6000806040838503121561019757600080fd5b6101a083610102565b91506101ae60208401610102565b9050925092905056fea26469706673582212208231827da6ecea4d016323de881434f215874d1d04c2ab12f951c9da7f22882764736f6c63430008180033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c8063095ea7b31461005c57806323b872dd14610087578063310ec4a71461009e578063a9059cbb1461005c578063dd62ed3e146100ca575b600080fd5b61007261006a36600461011e565b600192915050565b60405190151581526020015b60405180910390f35b610072610095366004610148565b60019392505050565b6100c86100ac36600461011e565b6001600160a01b03909116600090815260208190526040902055565b005b6100f46100d8366004610184565b506001600160a01b031660009081526020819052604090205490565b60405190815260200161007e565b80356001600160a01b038116811461011957600080fd5b919050565b6000806040838503121561013157600080fd5b61013a83610102565b946020939093013593505050565b60008060006060848603121561015d57600080fd5b61016684610102565b925061017460208501610102565b9150604084013590509250925092565b6000806040838503121561019757600080fd5b6101a083610102565b91506101ae60208401610102565b9050925092905056fea26469706673582212208231827da6ecea4d016323de881434f215874d1d04c2ab12f951c9da7f22882764736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
