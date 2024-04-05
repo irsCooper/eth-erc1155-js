@@ -1,30 +1,40 @@
 import React from "react";
 import {Button, Navbar, Nav} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 
-export default function myHeader({
+const Menu = ({
     signer,
     setSigner,
     provider,
     setProvider,
     chain,
     setChain
-}) {
+}) =>  {
+
+
+
+
+
 
     return(
-        <div>
+        <header>
             <Navbar collapseOnSelect expand='lg' bg='dark' variant="dark">
-                <Navbar.Brand>Professional</Navbar.Brand>
+                <Navbar.Brand>Профессионалы</Navbar.Brand>
 
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className='mr-auto'>
-                        <Nav.Link>Info</Nav.Link>
-                    </Nav>
-                    <Nav>
-                        <Button variant="primary" className="mr-2">Log In</Button>
-                    </Nav>
-                </Navbar.Collapse>
+                {signer
+                    ?
+                        <Nav className='mr-auto'>
+                            <Nav.Link><Link to='/lk'>Личный кабинет</Link></Nav.Link>
+                            <Button variant="danger" className="mr-2" >Выйти</Button>
+                        </Nav>
+                    :
+                        <Nav>
+                            <Button variant="success" className="mr-2" >Войти</Button>
+                        </Nav>
+                }
             </Navbar>
-        </div>
+        </header>
     )
 }
+
+export default Menu

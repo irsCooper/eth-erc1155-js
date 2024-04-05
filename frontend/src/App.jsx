@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { ethers } from 'ethers'
-import { myHeader } from './pages/Menu'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import Menu from './pages/Menu'
 
 import config from "./artifacts/contracts/contract.sol/Contract.json"
+import Lk from "./pages/Lk";
+
+import 'bootstrap/dist/css/bootstrap.css';
 
 let contract = null
 
@@ -29,8 +33,35 @@ function App() {
 
 
   return (
-    <div className="App">
-      <myHeader />
+    <div >
+      <Menu 
+        signer={''}
+        setSigner={''}
+        provider={''}
+        setProvider={''}
+        chain={''}
+        setChain={''} 
+      />
+
+
+    
+
+
+
+    
+      <BrowserRouter>
+        {provider
+          ?
+            <Routes>
+              <Route path='/lk' element={<Lk />}></Route>
+            </Routes>
+          :
+          <Routes>
+            <Route path='*' element={<Navigate to='/' />}></Route>
+          </Routes>
+        }
+      </BrowserRouter>
+
     </div>
   );
 }
