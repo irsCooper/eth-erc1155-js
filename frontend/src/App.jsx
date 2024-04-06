@@ -25,35 +25,37 @@ function App() {
       }
     }
 
+    
     usContract()
   }, [signer, provider])
 
 
-  window.ethereum.on('accountsChanged', () => {window.location.reload()})
 
+  window.ethereum.on('accountsChanged', () => {window.location.reload()})
+  window.ethereum.on('chainChanged', () => {
+    window.location.reload()
+    alert('Вы изменили сеть, наше решение работает только с сетью Hardhat')
+  })
 
   return (
     <div >
-      <Menu 
-        signer={''}
-        setSigner={''}
-        provider={''}
-        setProvider={''}
-        chain={''}
-        setChain={''} 
-      />
-
-
-    
-
-
-
     
       <BrowserRouter>
+
+        <Menu 
+          signer={signer}
+          setSigner={setSigner}
+          provider={provider}
+          setProvider={setProvider}
+          chain={chain}
+          setChain={setChain} 
+        />
+
         {provider
           ?
             <Routes>
-              <Route path='/lk' element={<Lk />}></Route>
+              <Route path='/lk' element={<Lk signer={signer} contract={contract}/>}></Route>
+              <Route path='*' element={<Navigate to='/lk' />}></Route>
             </Routes>
           :
           <Routes>
