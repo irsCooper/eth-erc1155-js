@@ -2,19 +2,19 @@ import React from "react";
 
 export default function Collection(props) {
 
-    const set = async (e) => {
-        e.preventDefault()
+    // const set = async (e) => {
+    //     e.preventDefault()
 
-        try {
-            const c = props.contract
-            const s = props.signer
+    //     try {
+    //         const c = props.contract
+    //         const s = props.signer
     
-            const res = await c.connect(s).sellNft(Number(props.nft[1][0]), price)
-            console.log(price, Number(props.nft[1][0]), res)
-        } catch(err) {
-            alert(err)
-        }
-    }
+    //         const res = await c.connect(s).sellNft(Number(props.nft[1][0]), price)
+    //         console.log(price, Number(props.nft[1][0]), res)
+    //     } catch(err) {
+    //         alert(err)
+    //     }
+    // }
 
     return (
         <div>

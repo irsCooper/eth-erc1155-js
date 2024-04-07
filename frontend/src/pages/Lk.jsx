@@ -24,7 +24,7 @@ export default function Lk({
 
             let c = await contract.connect(signer).getUserCollection()
             setCollection(c)
-        }, 1000)
+        }, 1500)
 
         return () => {
             clearInterval(interval)
@@ -35,7 +35,7 @@ export default function Lk({
 
     const sCol = async (e) => {
         e.preventDefault()
-
+        console.log(col)
         try {
             const res = await contract.connect(signer).setCollection(col.name, col.desc)
             console.log(res)
