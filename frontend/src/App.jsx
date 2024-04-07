@@ -7,6 +7,7 @@ import config from "./artifacts/contracts/contract.sol/Contract.json"
 import Lk from "./pages/Lk";
 
 import 'bootstrap/dist/css/bootstrap.css';
+import Start from "./pages/Start";
 
 let contract = null
 
@@ -14,7 +15,6 @@ function App() {
 
   const [signer, setSigner] = useState(null)
   const [provider, setProvider] = useState(null)
-  const [chain, setChain] = useState(null)
 
   useEffect(() => {
     const usContract = async () => {
@@ -47,8 +47,6 @@ function App() {
           setSigner={setSigner}
           provider={provider}
           setProvider={setProvider}
-          chain={chain}
-          setChain={setChain} 
         />
 
         {provider
@@ -59,6 +57,7 @@ function App() {
             </Routes>
           :
           <Routes>
+            <Route path='/' element={<Start />}></Route>
             <Route path='*' element={<Navigate to='/' />}></Route>
           </Routes>
         }

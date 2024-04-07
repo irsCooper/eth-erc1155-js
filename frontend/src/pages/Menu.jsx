@@ -1,15 +1,13 @@
 import { ethers } from "ethers";
 import React, { useCallback } from "react";
-import {Button, Navbar, Nav} from 'react-bootstrap'
+import {Button, Navbar, Nav, Container, Offcanvas} from 'react-bootstrap'
 import { Link } from "react-router-dom";
 
 export default function Menu({
     signer,
     setSigner,
     provider,
-    setProvider,
-    chain,
-    setChain
+    setProvider
 }) {
 
 
@@ -38,20 +36,23 @@ export default function Menu({
 
     return(
         <header>
-            <Navbar collapseOnSelect expand='lg' bg='dark' variant="dark">
-                <Navbar.Brand>Профессионалы</Navbar.Brand>
+            <Navbar bg='dark' data-bs-theme='dark'>
+                <Container>
+                    <Navbar.Brand>Профессионалы</Navbar.Brand>
 
-                {signer
-                    ?
-                        <Nav className='mr-auto'>
-                            <Nav.Link><Link to='/lk'>Личный кабинет</Link></Nav.Link>
-                            <Button variant="danger" className="mr-2" onClick={() => window.location.reload()}>Выйти</Button>
-                        </Nav>
-                    :
-                        <Nav className='mr-auto'>
-                            <Button variant="success" className="mr-2" onClick={onConnect} >Подключить кошелёк</Button>
-                        </Nav>
-                }
+                    {signer
+                        ?
+                            <Nav>
+                                <Nav.Link><Link style={{color: 'grey'}} to='/active'>Активы</Link></Nav.Link>
+                                <Nav.Link><Link style={{color: 'grey'}} to='/lk'>Личный кабинет</Link></Nav.Link>
+                                <Button variant="danger" className="mr-2" onClick={() => window.location.reload()}>Выйти</Button>
+                            </Nav>
+                        :
+                            <Nav>
+                                <Button variant="success" className="mr-2" onClick={onConnect} >Подключить кошелёк</Button>
+                            </Nav>
+                    }
+                </Container>
             </Navbar>
         </header>
     )
