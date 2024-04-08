@@ -15,6 +15,7 @@ export default function Nft(props) {
     
             const res = await c.connect(s).sellNft(Number(props.nft[1][0]), price)
             console.log(price, Number(props.nft[1][0]), res)
+            alert('Подождите ответа блокчейна, результат скоро отобразится')
         } catch(err) {
             alert(err)
         }
@@ -29,6 +30,7 @@ export default function Nft(props) {
     
             const res = await c.connect(s).transferNftForFriend(Number(props.nft[1][0]), friend)
             console.log(friend, Number(props.nft[1][0]), res)
+            alert('Подождите ответа блокчейна, результат скоро отобразится')
         } catch(err) {
             alert(err)
             console.log(err)
@@ -44,6 +46,7 @@ export default function Nft(props) {
     
             const res = await c.connect(s).buyNft(Number(props.nft[0]))
             console.log(Number(props.nft[0]), res)
+            alert('Подождите ответа блокчейна, результат скоро отобразится')
         } catch(err) {
             alert(err)
             console.log(err)
@@ -97,7 +100,7 @@ export default function Nft(props) {
 
                                     <Form style={{display: 'flex'}} className="mb-3" onSubmit={sell}>
                                         <Form.Group>
-                                            <Form.Control value={price} onChange={e => setPrice(Number(e.target.value))} style={{width: '280px'}} type="number" min={0} title="введите стоимость"/>
+                                            <Form.Control value={price} onChange={e => setPrice(Number(e.target.value))} style={{width: '280px'}} type="number" min={1} title="введите стоимость"/>
                                         </Form.Group>
                                         <Button style={{marginLeft: '10px', width: '104px'}} variant="primary" type="submit">продать</Button>
                                     </Form> 

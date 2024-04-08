@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Nft from "./Nft";
 import Collection from "./Collection";
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, Modal } from 'react-bootstrap'
 
 export default function Lk({
     signer,
@@ -46,6 +46,28 @@ export default function Lk({
         }
     }
 
+
+    const [show, setShow] = useState(false);
+    const [_nft, set_Nft] = useState({name: '', desc: '', file: '', price: 0, amount: 0})
+
+    const file = (e) => {
+        const file = e.target.files[0]
+        set_Nft({..._nft, file: file.name})
+    }
+
+    const sNft = async (e) => {
+        e.preventDefault()
+
+        try {
+            const res = await contract.connect(signer).setNft(_nft.name, _nft.desc, _nft.file, _nft.price, _nft.amount, true) 
+            console.log(res)
+            alert('Подождите ответа блокчейна, результат скоро отобразится')
+        } catch(err) {
+            console.log(err)
+            alert(err)
+        }
+    }
+
     return (
         <div>
             <div style={{display: 'flex', gridGap: '35%', marginTop: '3%'}}>
@@ -65,7 +87,7 @@ export default function Lk({
                                 }
                                 {user[3]
                                     ?
-                                        <h4>Процент скидки: {user[3]}</h4>
+                                        <h4>Процент скидки: {user[3].toString()}</h4>
                                     :
                                         <></>
                                 }
@@ -96,6 +118,27 @@ export default function Lk({
                                                 </Form.Group>
                                                 <Button style={{marginLeft: '10px', marginTop: '3%' ,width: '150px'}} variant="primary" type="submit">отправить</Button>
                                             </Form> 
+
+                                            <div>
+                                            <Button onClick={() => setShow(true)}>создать nft</Button>
+
+                                            <Modal show={show} onHide={() => setShow(false)}>
+                                                <Modal.Body >
+                                                    <Form className="mb-3" onSubmit={sNft} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}} >
+                                                        <h1 style={{textAlign: 'center'}}>Введите информацию о nft</h1>
+                                                        <Form.Group>
+                                                            <Form.Control value={_nft.name} onChange={e => set_Nft({..._nft, name: e.target.value})} style={{width: '280px'}} type="text" placeholder="введите название" required/>
+                                                            <Form.Control value={_nft.desc} onChange={e => set_Nft({..._nft, desc: e.target.value})} style={{width: '280px'}} type="text" placeholder="введите описание" required/>
+
+                                                            <Form.Control value={_nft.price} onChange={e => set_Nft({..._nft, price: e.target.value})} type="number" min={1} title="введите стоимость" required/>
+                                                            <Form.Control value={_nft.amount} onChange={e => set_Nft({..._nft, amount: e.target.value})} type="number" min={1} title="введите количество" required/>
+                                                            <input type="file" required onChange={file}/>
+                                                        </Form.Group>
+                                                        <Button style={{marginLeft: '10px', marginTop: '3%' ,width: '150px'}} variant="primary" type="submit">создать</Button>
+                                                    </Form> 
+                                                </Modal.Body>
+                                            </Modal>
+                                            </div>
                                         </div>
                                     :
                                         <></>
@@ -134,7 +177,7 @@ export default function Lk({
                             <h5>Пока тут пусто</h5>
                     }
                     {collection.map(c => 
-                        <Collection nft={nft} col={c} signer={signer} contract={contract} key={c[0]}></Collection>
+                        <Collection col={c} signer={signer} contract={contract} key={c[0]}></Collection>
                     )}
                 </div>
             </div>
