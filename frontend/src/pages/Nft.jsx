@@ -56,8 +56,8 @@ export default function Nft(props) {
     // onSell()
     // console.log(props.nft)
     return (
-        <div style={{border: '5px solid black', width: '409px', margin: '10px'}}>
-            <img width='400px' src={'./images/' + props.nft[1][3]}></img>
+        <div style={{border: '5px solid black', width: '459px', margin: '10px'}}>
+            <img width='450px' src={'./images/' + props.nft[1][3]}></img>
             <h4>Название: {props.nft[1][1]}</h4>
             <p>Описание: {props.nft[1][2]}</p>
             {props.nft[3]
@@ -108,7 +108,9 @@ export default function Nft(props) {
                         }
                     </div>
                 :
+                    
                     <div>
+                        <p>Владелец: {props.nft[2]}</p>
                         <Form style={{display: 'flex'}} className="mb-3" onSubmit={buy}>
                             <Button style={{marginLeft: '10px', width: '104px'}} variant="primary" type="submit">купить</Button>
                         </Form> 

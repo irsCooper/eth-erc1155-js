@@ -8,6 +8,8 @@ import Lk from "./pages/Lk";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Start from "./pages/Start";
+import SetNftToId from "./pages/SetNftToId";
+import Active from "./pages/Active";
 
 let contract = null
 
@@ -53,6 +55,8 @@ function App() {
           ?
             <Routes>
               <Route path='/lk' element={<Lk signer={signer} contract={contract}/>}></Route>
+              <Route path='/lk/:id' element={<SetNftToId signer={signer} contract={contract}/>}></Route>
+              <Route path='/active' element={<Active signer={signer} contract={contract}/>}></Route>
               <Route path='*' element={<Navigate to='/lk' />}></Route>
             </Routes>
           :
